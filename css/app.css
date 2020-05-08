@@ -57,3 +57,26 @@ li {
 .closeBtn {
     float: right
 }
+
+
+/*details*/
+#details{
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    padding-top: 200px;
+}
+
+#details h3 {
+    background-color: rgba(214, 46, 51 , 0.6);
+    cursor: pointer;
+    color: white;
+    margin: 0 !important;
+}
+
+.parg{
+    padding: 10px;
+    background-color: #ccc;
+    margin: 0;
+    display: none;
+}
