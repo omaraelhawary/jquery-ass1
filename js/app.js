@@ -39,14 +39,39 @@ function countdown(){
     m = (m < 10) ? "0" + m : m;
     s = (s < 10) ? "0" + s : s;
 
-    document.getElementById("days").innerHTML = "<h3>"+  d + " D"+"</h3>";
-    document.getElementById("days").innerHTML = "<h3>"+  d + " D"+"</h3>";
-
-    document.getElementById("hours").innerHTML ="<h3>"+  h + " h"+"</h3>";
-    document.getElementById("minutes").innerHTML = "<h3>"+  m + " m"+"</h3>";
-    document.getElementById("seconds").innerHTML = "<h3>"+  s + " s"+"</h3>";
-
+    $("#days").text(  d + " D");
+    $("#hours").text(  h + " H");
+    $("#minutes").text(  m + " M");
+    $("#seconds").text(  s + " S");
     setTimeout(countdown, 1000);
 }
 
 countdown();
+
+/* char */
+
+let maxChar = 100;
+$("textarea").keyup(function(){
+   let lenghtOfChar =$(this).val().length;
+   let remainChar = maxChar - lenghtOfChar ;
+   if(remainChar >= 0)
+   {
+     $("#char").text(remainChar)
+   }
+   else
+   {
+     $("#char").text("your available character finished");
+   }
+})
+
+
+/************** top scroll jss */
+$("a").click(function(){
+    
+    var sectionId= $(this).attr("href");
+    
+    var positionOfSection = $(sectionId).offset().top;
+    
+    $("html , body").animate({scrollTop:positionOfSection},2000);
+    
+})
